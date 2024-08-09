@@ -7,8 +7,8 @@ import Form from "@components/Form";
 
 const UpdatePrompt = () => {
   const router = useRouter();
-  const searchParams = useSearchParams();
   <Suspense>
+    const searchParams = useSearchParams();
     const promptId = searchParams.get("id");
   </Suspense>
   
