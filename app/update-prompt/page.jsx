@@ -25,7 +25,7 @@ const UpdatePrompt = () => {
     };
 
     if (promptId) getPromptDetails();
-  }, <Suspense>[promptId]</Suspense>);
+  }, [promptId]);
 
   const updatePrompt = async (e) => {
     e.preventDefault();
@@ -53,6 +53,7 @@ const UpdatePrompt = () => {
   };
 
   return (
+    <Suspense>
         <Form
       type='Edit'
       post={post}
@@ -60,6 +61,8 @@ const UpdatePrompt = () => {
       submitting={submitting}
       handleSubmit={updatePrompt}
     />
+    </Suspense>
+        
     
   );
 };
