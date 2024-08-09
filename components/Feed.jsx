@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect} from 'react'
+import { useState, useEffect, Suspense} from 'react'
 
 import PromptCard from './PromptCard';
 
@@ -82,6 +82,7 @@ const Feed = () => {
       </form>
 
       {/* All Prompts */}
+      <Suspense>
       {searchText ? (
         <PromptCardList
           data={searchedResults}
@@ -90,6 +91,8 @@ const Feed = () => {
       ) : (
         <PromptCardList data={posts} handleTagClick={handleTagClick} />
       )}
+      </Suspense>
+      
     </section>
   )
 }
